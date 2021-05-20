@@ -37,6 +37,8 @@ public class User {
         this.roles = roles;
     }
 
+    public User() {}
+
     public Long getId() {
         return id;
     }

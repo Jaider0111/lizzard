@@ -1,6 +1,7 @@
-package com.unal.lizzard.web.dto;
+package com.unal.lizzard.web;
 
 import com.unal.lizzard.service.UserService;
+import com.unal.lizzard.web.dto.UserRegistrationDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,7 +24,7 @@ public class UserRegistrationController {
     }
 
     @PostMapping
-    public String registerUserAccount(@ModelAttribute("user")UserRegistrationDto registrationDto){
+    public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto){
         userService.save(registrationDto);
         return "redirect:/registration?success";
     }
